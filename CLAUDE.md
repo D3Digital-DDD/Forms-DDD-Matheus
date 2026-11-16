@@ -21,6 +21,14 @@ o design precisa transmitir exclusividade e luxo. Identidade visual = a do **DDD
 - Banco: SQL em `supabase/migrations/` (rodar no SQL Editor do Supabase). Tabela `leads` com RLS ligado e sem policies (só o servidor acessa).
 - Sem `SUPABASE_URL`/`SUPABASE_SECRET_KEY` em dev, o lead só é logado no terminal; em produção, o envio falha.
 
+## Publicação
+- GitHub: `D3Digital-DDD/Forms-DDD-Matheus` (público; o usuário é colaborador `joaolucasbs11`).
+- Este repositório tem `credential.helper` vazio no `.git/config` local, de propósito: não usa o login salvo do Mac
+  (que serve a outra operação do usuário). Cada `git push` pede um token clássico (`repo`) — o usuário cola no terminal dele.
+- Vercel: projeto `forms-ddd-matheus-ofc` na conta do Matheus (plano Hobby). No Hobby, deploys de repositório
+  privado com commits de quem não é dono são bloqueados — por isso o repositório é público. Ideal futuro: Vercel Pro.
+- Variáveis na Vercel: `SUPABASE_URL` e `SUPABASE_SECRET_KEY`.
+
 ## Segurança
 - Segredos só em variáveis de ambiente (`.env.local` local; Environment Variables na Vercel). Nunca no código, nunca commitados.
 - `.env*` está no `.gitignore` (exceto `.env.example`, que só tem os nomes das variáveis).
