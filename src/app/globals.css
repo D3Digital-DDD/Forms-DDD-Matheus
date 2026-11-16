@@ -88,3 +88,36 @@ input:-webkit-autofill {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Transições entre perguntas */
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--dir, 1) * 28px));
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes option-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.step-enter {
+  animation: step-in 0.7s var(--ease-luxe) both;
+}
+
+.option-enter {
+  animation: option-in 0.55s var(--ease-luxe) both;
+}
