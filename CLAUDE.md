@@ -17,6 +17,9 @@ o design precisa transmitir exclusividade e luxo. Identidade visual = a do **DDD
 - `npm run dev` — servidor local (http://localhost:3000)
 - `npm run build` — build de produção
 - `npm run lint` — lint
+- Preview no app do Claude usa a porta 3005 (`.claude/launch.json`) — a 3000 costuma estar ocupada por outro projeto do usuário.
+- Banco: SQL em `supabase/migrations/` (rodar no SQL Editor do Supabase). Tabela `leads` com RLS ligado e sem policies (só o servidor acessa).
+- Sem `SUPABASE_URL`/`SUPABASE_SECRET_KEY` em dev, o lead só é logado no terminal; em produção, o envio falha.
 
 ## Segurança
 - Segredos só em variáveis de ambiente (`.env.local` local; Environment Variables na Vercel). Nunca no código, nunca commitados.
